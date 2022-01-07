@@ -1,0 +1,15 @@
+{
+	"name": "ext-demo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "concurrently \"cd react/web-component && npm start\" \"cd ext && npm run serve\"",
+		"install": "concurrently \"cd angular/web-component && npm i\" \"cd ext && npm i\" \"cd react/web-component && npm i\""
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"concurrently": "^6.0.0"
+	}
+}

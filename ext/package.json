@@ -1,0 +1,15 @@
+{
+  "name": "extdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "http-server": "^14.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server --gzip"
+  },
+  "author": "",
+  "license": "ISC"
+}

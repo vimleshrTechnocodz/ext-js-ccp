@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to ExtJS Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/classic/theme-classic/resources/theme-classic-all_1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.2.0/ext-all.js"
+        integrity="sha512-X2mCQagqg8+wbViIPeZPYY6ci/iBFNOQWEyKduIwsFLJN3fTxA6Fsh636+/VgE6RGBE6T8lvIAa7QxmZ423I7w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+    <script src="app.js"></script>
+    <script src="angular-list.js"></script>
+    <!-- <script src="react-list.js"></script> -->
+    <script src="http://localhost:5002/main.js"></script>
+</head>
+
+<body onload="tellComponents()">
+    <h1>
+        Welcome to ExtJs Demo
+    </h1>
+    <div id="helloExt">
+    </div>
+    <!-- Angular Custom List Component -->
+    <div>
+        <custom-list></custom-list>
+        <div id="react-container"></div>
+        <!-- <react-custom-list></react-custom-list> -->
+    </div>
+</body>
+<script>
+    function tellComponents() {
+
+        const reactEl = document.createElement('react-el');
+
+        reactEl.setAttribute('onHelloEvt', 'onHelloEvt');
+        reactEl.addEventListener('onHelloEvt', (e) => helloEvent('React'));
+
+        const reactElContainer = document.getElementById('react-container')
+        if (reactElContainer) {
+            if (reactElContainer?.children?.length > 0) {
+                reactElContainer.removeChild(reactElContainer.children[0]);
+            }
+            reactElContainer.appendChild(reactEl);
+        }
+
+    }
+
+    function helloEvent(who) {
+        logMessage(who, 'hello');
+    }
+
+    function logMessage(source, msg) {
+        const msgContainer = document.getElementById('messages');
+        msgContainer.innerHTML += `<p><strong>${source}</strong> said ${msg}`;
+    }
+</script>
+
+</html>
