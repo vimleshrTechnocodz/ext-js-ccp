@@ -1,4 +1,4 @@
-# Microservices demo with Node-red and rabbitMQ
+# ExtJS demo with react and angular
 
 This application contains three different microservices - users, node-red and consumer(rabbitMQ).
 
