@@ -1,7 +1,5 @@
 # ExtJS demo with react and angular
 
-This application contains three different microservices - users, node-red and consumer(rabbitMQ).
-
 ## Installation
 
 You should have npm and concurrently (globally) installed. Install npm from here - https://www.npmjs.com/ and then
