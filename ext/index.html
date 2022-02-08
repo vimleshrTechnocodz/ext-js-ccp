@@ -14,23 +14,65 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
-    <script src="app.js"></script>
+    <script src="app.js"></script>    
     <script src="angular-list.js"></script>
     <!-- <script src="react-list.js"></script> -->
     <script src="http://localhost:5002/main.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@cometchat-pro/chat@3.0.6/CometChat.js"></script>    
+    <script src="const.js"></script>
+    <link rel="stylesheet"
+        href="/notifications.css">
+    <script>
+        var Ext=Ext || {};
+
+        Ext.beforeLoad= function(tags){
+            var s=location.search,profile;
+            if(s.match(/\bclassic\b/)){
+                profile="classic";
+            }
+            else if (s.match(/\bmorden\b/)) {
+                profile = "morden";
+            }else{
+                profile=tags.desktop ? 'classic' : 'morden'
+            }
+            Ext.manifest = profile;
+        }
+    </script>
 </head>
 
 <body onload="tellComponents()">
-    <h1>
-        Welcome to ExtJs Demo
-    </h1>
+    
     <div id="helloExt">
     </div>
+    <div id="helloExt1">
+    </div>
+    <div id="react-container"></div>
+    <!-- <react-custom-list></react-custom-list> -->
     <!-- Angular Custom List Component -->
-    <div>
-        <custom-list></custom-list>
-        <div id="react-container"></div>
-        <!-- <react-custom-list></react-custom-list> -->
+    <div style="left: 0;right: 0;top: 0;bottom: 0;z-index: 9;background: #ffffff9e;">
+        <!-- <div id="chatBox">
+            <h2 class="chat-window-hedding">Chat Window</h2>
+            <div class="chat-window">
+                <div id="user-group" class="user-list">     
+                    <ul id="grouplist"></ul>               
+                    <ul id="userlist">
+                    </ul>
+                </div>
+                <div class="messages-list">
+                    <div id="currentmessage">
+                        <p class="nouser">Select User</p>
+                    </div>
+                    <div class="chat-text-area">
+                        <div class="loader"></div>
+                        <textarea id="message"></textarea>
+                        <button class="" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>                
+            </div>
+            
+        </div> -->
+        <!-- <custom-list></custom-list> -->
+        
     </div>
 </body>
 <script>
@@ -59,6 +101,8 @@
         const msgContainer = document.getElementById('messages');
         msgContainer.innerHTML += `<p><strong>${source}</strong> said ${msg}`;
     }
-</script>
 
+    
+</script>
+<script src="notifications.js"></script>
 </html>

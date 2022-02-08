@@ -1,0 +1,8 @@
+const constent = {
+  APP_ID: "189631f61bd4495f",
+  REGION: "us",
+  AUTH_KEY: "bf9b4296d3cd7c31b4045735aa65e1e3d3887487",
+  APP_KEY: "b2hVnob8NqU4qFLq6un6QFQSMJkk01dI",
+  REST_API_KEY: "21405f90835f49d3ee69af77543be312aac2211e",
+  UNIQUE_LISTENER_ID: "vimleshk3434358545",
+};
