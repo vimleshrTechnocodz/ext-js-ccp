@@ -365,6 +365,25 @@ const getUsers = () => {
     }
   );
 };
+
+//Get member by group
+const getGroupMembers = (GUID = "") => {
+  if (GUID) {
+    let limit = 30;
+    let groupMemberRequest = new CometChat.GroupMembersRequestBuilder(GUID)
+      .setLimit(limit)
+      .build();
+
+    groupMemberRequest.fetchNext().then(
+      (groupMembers) => {
+        console.log("Group Member list fetched successfully:", groupMembers);
+      },
+      (error) => {
+        console.log("Group Member list fetching failed with exception:", error);
+      }
+    );
+  }
+};
 //get Conversation
 const getConversation = () => {
   document.getElementById("notificationcount").classList.add("act");
